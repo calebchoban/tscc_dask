@@ -1,0 +1,18 @@
+#!/bin/bash
+#PBS -q condo
+#PBS -N notebook
+#PBS -l nodes=1:ppn=24:ib
+#PBS -l walltime=1:00:00
+#PBS -V
+#PBS -A dkeres-group
+
+cd $PBS_O_WORKDIR
+
+# choose your own unique port between 8000 and 9999
+NOTEBOOKPORT=8181
+
+# setup tunnel between computing and login node
+ssh -N -f -R $NOTEBOOKPORT:localhost:$NOTEBOOKPORT $PBS_O_HOST
+
+# launch the notebook
+jupyter notebook --port=$NOTEBOOKPORT --NotebookApp.token='' --no-browser > notebook.log
