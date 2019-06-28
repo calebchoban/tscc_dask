@@ -10,7 +10,7 @@ $ git clone https://github.com/calebchoban/tscc_dask.git
 
 Make a conda environment from the provided yml file (this will take a while):
 ```console
-$ conda conda env create -f dask.yml
+$ conda env create -f dask.yml
 ```
 
 Submit the Jupyter notebook job to TSCC:
