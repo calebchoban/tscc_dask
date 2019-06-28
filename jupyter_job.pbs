@@ -12,7 +12,7 @@ cd $PBS_O_WORKDIR
 source ~/.bashrc
 
 # Activate the python environment you want to use
-conda activate python3
+conda activate py3
 
 # choose your own unique port between 8000 and 9999
 NOTEBOOKPORT=8181
